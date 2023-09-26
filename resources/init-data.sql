@@ -14,17 +14,17 @@ INSERT IGNORE INTO `dimension` (`id`, `dichotomy`, `description`) VALUES
 /*!40000 ALTER TABLE `dimension` ENABLE KEYS */;
 
 /*!40000 ALTER TABLE `question` DISABLE KEYS */;
-INSERT IGNORE INTO `question` (`id`, `text`, `dimension`, `direction`) VALUES
-	(1, 'You find it takes effort to introduce yourself to other people.', 'EI', b'1'),
-	(2, 'You consider yourself more practical than creative.', 'SN', b'0'),
-	(3, 'Winning a debate matters less to you than making sure no one gets upset.', 'TF', b'1'),
-	(4, 'You get energized going to social events that involve many interactions.', 'EI', b'0'),
-	(5, 'You often spend time exploring unrealistic and impractical yet intriguing ideas.', 'SN', b'1'),
-	(6, 'Deadlines seem to you to be of relative rather than absolute importance.', 'JP', b'1'),
-	(7, 'Logic is usually more important than heart when it comes to making important decisions.', 'TF', b'0'),
-	(8, 'Your home and work environments are quite tidy.', 'JP', b'0'),
-	(9, 'You do not mind being at the center of attention.', 'EI', b'0'),
-	(10, 'Keeping your options open is more important than having a to-do list.', 'JP', b'1');
+INSERT IGNORE INTO question (id, text, dimension, direction) VALUES
+    (1, 'Kamu merasa memerlukan usaha untuk memperkenalkan dirimu kepada orang lain.', 'EI', b'1'),
+    (2, 'Kamu menganggap dirimu lebih praktis daripada kreatif.', 'SN', b'0'),
+    (3, 'Memenangkan debat kurang penting bagimu daripada memastikan tak ada yang tersinggung.', 'TF', b'1'),
+    (4, 'Kamu merasa bersemangat saat menghadiri acara sosial yang melibatkan banyak interaksi.', 'EI', b'0'),
+    (5, 'Kamu sering menghabiskan waktu untuk menjelajahi ide-ide yang nggak realistis dan nggak praktis, tapi tetap menarik.', 'SN', b'1'),
+    (6, 'Bagimu, tenggat waktu tampaknya lebih bersifat relatif daripada mutlak.', 'JP', b'1'),
+    (7, 'Dalam mengambil keputusan penting, logika biasanya lebih esensial daripada perasaan.', 'TF', b'0'),
+    (8, 'Lingkungan rumah dan tempat belajarmu sangat rapi.', 'JP', b'0'),
+    (9, 'Kamu tidak keberatan menjadi pusat perhatian.', 'EI', b'0'),
+    (10,'Menjaga opsi kamu terbuka lebih penting daripada memiliki daftar yang harus dilakukan.', 'JP', b'1');
 /*!40000 ALTER TABLE `question` ENABLE KEYS */;
 
 
