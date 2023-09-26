@@ -19,7 +19,7 @@ export default class UserController {
   };
 
   static getUser = async (req, res) => {
-    const { id: userId, email: userEmail } = req.query;
+    const { id: userId, name: userName } = req.query;
     let userDetails;
 
     try {
@@ -28,8 +28,8 @@ export default class UserController {
 
       if (userId) {
         userDetails = await User.findOne({ where: { id: userId }, include: [UserQuestion] });
-      } else if (userEmail) {
-        userDetails = await User.findOne({ where: { email: userEmail }, include: [UserQuestion] });
+      } else if (userName) {
+        userDetails = await User.findOne({ where: { name: userName }, include: [UserQuestion] });
       }
 
       res.status(200).json(userDetails ? userDetails : { 'message': 'User not found.' });
@@ -40,11 +40,13 @@ export default class UserController {
   };
 
   static createOrUpdateUser = async (req, res) => {
-    const { email, answers } = req.body;
+    const { name, answers } = req.body;
+
+    console.log(name, answers);
 
     try {
-      let user = await User.findOne({ where: { email: email } });
-      if (!user) user = await User.create({ email: email });
+      let user = await User.findOne({ where: { name: name } });
+      if (!user) user = await User.create({ name: name });
 
       let [rankings, ignored] = await Promise.all(
           [createReport(answers), updateUserQuestions(answers, user)]
